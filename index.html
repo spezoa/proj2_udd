@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Crud Spezoa</title>
 </head>
 <body>
     <p>Hola, prueba de CRUD</p>
+    <main>
+        <h1>Lista de tareas</h1>
+
+        <section class="formulario">
+            <form>
+                <label for="nombre-tarea">Nombre</label>
+                <input type="text" name="nombre" id="nombre-tarea">
+                <label for="responsable">Responsable</label>
+                <input type="text" name="responsable" id="responsable">
+                <label for="descripcion">Descripción</label>
+                <input type="text" name="descripcion" id="descripcion">
+                <button id="agregar">Agregar</button>
+                <button id="actualizar">Actualizar</button>
+            </form>
+        </section>
+        <section id="tareas">
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
     
 </body>
 </html>
