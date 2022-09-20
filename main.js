@@ -37,7 +37,7 @@ function limpiarInput() {
   descripcion.value = ''
 }
 
-function editarTarea(boton, nombreTarea) {
+function editarTarea(button, nombreTarea) {
   botonAgregar.style.display = 'none'
   botonActualizar.style.display = 'block'
 
@@ -46,7 +46,7 @@ function editarTarea(boton, nombreTarea) {
   nombre.value = tareaEnEdicion.nombre
   responsable.value = tareaEnEdicion.responsable
   descripcion.value = tareaEnEdicion.descripcion
-  nombre.setAttribute('disabled', true)
+  nombre.setAttribute('enabled', true)
 }
 
 function eliminarTarea(boton, nombre) {
