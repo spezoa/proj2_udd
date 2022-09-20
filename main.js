@@ -1,5 +1,5 @@
-let addRoleButton = document.getElementById('agregar')
-addRoleButton.addEventListener('click', (evento) => agregarTarea(evento))
+let botonAgregar = document.getElementById('agregar')
+botonAgregar.addEventListener('click', (evento) => agregarTarea(evento))
 
 let botonActualizar = document.getElementById('actualizar')
 botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
@@ -38,7 +38,7 @@ function limpiarInput() {
 }
 
 function editarTarea(boton, nombreTarea) {
-  addRoleButton.style.display = 'none'
+  botonAgregar.style.display = 'none'
   botonActualizar.style.display = 'block'
 
   let tareaEnEdicion = tareas.find((tarea) => tarea.nombre === nombreTarea)
@@ -116,7 +116,7 @@ function actualizarTarea(evento) {
   limpiarInput()
 
   // vuelve a aparecer boton agregar
-  addRoleButton.style.display = 'block'
+  botonAgregar.style.display = 'block'
   // vuelva a desaparecer el boton actualizar
   botonActualizar.style.display = 'none'
   // vuelve a quedar activo el input
