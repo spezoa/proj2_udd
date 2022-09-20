@@ -1,5 +1,5 @@
-let botonAgregar = document.getElementById('agregar')
-botonAgregar.addEventListener('click', (evento) => agregarTarea(evento))
+let addButton = document.getElementById('addBtn')
+addButton.addEventListener('click', (evento) => agregarTarea(evento))
 
 let botonActualizar = document.getElementById('actualizar')
 botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
@@ -8,9 +8,9 @@ let nombre = document.getElementById('nombre-tarea')
 let responsable = document.getElementById('responsable')
 let descripcion = document.getElementById('descripcion')
 
-let contenedor = document.getElementById('tareas')
+let contenedor = document.getElementById('assignedFunction')
 
-let tareas = []
+let assignedFunction = []
 
 function agregarTarea(e) {
   e.preventDefault()
@@ -24,7 +24,7 @@ function agregarTarea(e) {
   // if (tarea que estoy creando ya existe en el array o algun input está vacío) {
   //     mostrar un error
   // }else {
-  tareas.push(tarea)
+  assignedFunction.push(tarea)
   guardarEnLS()
   mostrarTareas()
   limpiarInput()
@@ -38,10 +38,10 @@ function limpiarInput() {
 }
 
 function editarTarea(button, nombreTarea) {
-  botonAgregar.style.display = 'none'
+  addButton.style.display = 'none'
   botonActualizar.style.display = 'block'
 
-  let tareaEnEdicion = tareas.find((tarea) => tarea.nombre === nombreTarea)
+  let tareaEnEdicion = assignedFunction.find((tarea) => tarea.nombre === nombreTarea)
 
   nombre.value = tareaEnEdicion.nombre
   responsable.value = tareaEnEdicion.responsable
@@ -51,12 +51,12 @@ function editarTarea(button, nombreTarea) {
 
 function eliminarTarea(boton, nombre) {
   boton.parentElement.parentElement.remove()
-  tareas = tareas.filter((tarea) => tarea.nombre !== nombre)
+  assignedFunction = assignedFunction.filter((tarea) => tarea.nombre !== nombre)
   guardarEnLS()
 }
 
 function leerTareas() {
-  let tareasEnLS = window.localStorage.getItem('tareas')
+  let tareasEnLS = window.localStorage.getItem('assignedFunction')
 
   //   if (tareasEnLS === null) {
   //     tareas = []
@@ -64,13 +64,13 @@ function leerTareas() {
   //     tareas = JSON.parse(tareasEnLS)
   //     }
 
-  tareas = JSON.parse(tareasEnLS) || []
+  assignedFunction = JSON.parse(tareasEnLS) || []
   mostrarTareas()
 }
 
 function mostrarTareas() {
   contenedor.innerHTML = ''
-  tareas.forEach((tarea) => {
+  assignedFunction.forEach((tarea) => {
     contenedor.innerHTML += `
             <article>
                 <div>
@@ -88,8 +88,8 @@ function mostrarTareas() {
 }
 
 function guardarEnLS() {
-  let arrayConvertidoAString = JSON.stringify(tareas)
-  window.localStorage.setItem('tareas', arrayConvertidoAString)
+  let arrayConvertidoAString = JSON.stringify(assignedFunction)
+  window.localStorage.setItem('assignedFunction', arrayConvertidoAString)
 }
 
 function actualizarTarea(evento) {
@@ -100,7 +100,7 @@ function actualizarTarea(evento) {
   let nuevaDescripcion = descripcion.value
 
   // editar el obtejo dentro del array que tenga el identificar
-  tareas = tareas.map((tarea) => {
+  assignedFunction = assignedFunction.map((tarea) => {
     if (tarea.nombre === nombreTarea) {
       return {
         nombre: nombreTarea,
@@ -116,7 +116,7 @@ function actualizarTarea(evento) {
   limpiarInput()
 
   // vuelve a aparecer boton agregar
-  botonAgregar.style.display = 'block'
+  addButton.style.display = 'block'
   // vuelva a desaparecer el boton actualizar
   botonActualizar.style.display = 'none'
   // vuelve a quedar activo el input
