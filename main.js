@@ -1,10 +1,10 @@
-let botonAgregar = document.getElementById('agregar')
-botonAgregar.addEventListener('click', (evento) => agregarTarea(evento))
+let addButton = document.getElementById('addButton')
+addButton.addEventListener('click', (evento) => addRole(evento))
 
 let botonActualizar = document.getElementById('actualizar')
 botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
 
-let nombre = document.getElementById('nombre-tarea')
+let role = document.getElementById('addRole')
 let responsable = document.getElementById('responsable')
 let descripcion = document.getElementById('descripcion')
 
@@ -12,11 +12,11 @@ let contenedor = document.getElementById('tareas')
 
 let tareas = []
 
-function agregarTarea(e) {
+function addRole(e) {
   e.preventDefault()
 
   const tarea = {
-    nombre: nombre.value, //este elemento es único
+    nombre: role.value, //este elemento es único
     responsable: responsable.value,
     descripcion: descripcion.value
   }
@@ -32,7 +32,7 @@ function agregarTarea(e) {
 }
 
 function limpiarInput() {
-  nombre.value = ''
+  role.value = ''
   responsable.value = ''
   descripcion.value = ''
 }
@@ -43,10 +43,10 @@ function editarTarea(boton, nombreTarea) {
 
   let tareaEnEdicion = tareas.find((tarea) => tarea.nombre === nombreTarea)
 
-  nombre.value = tareaEnEdicion.nombre
+  role.value = tareaEnEdicion.nombre
   responsable.value = tareaEnEdicion.responsable
   descripcion.value = tareaEnEdicion.descripcion
-  nombre.setAttribute('disabled', true)
+  role.setAttribute('disabled', true)
 }
 
 function eliminarTarea(boton, nombre) {
@@ -95,7 +95,7 @@ function guardarEnLS() {
 function actualizarTarea(evento) {
   evento.preventDefault()
   // leer los datos del input
-  let nombreTarea = nombre.value
+  let nombreTarea = role.value
   let nuevoResponsable = responsable.value
   let nuevaDescripcion = descripcion.value
 
@@ -120,7 +120,7 @@ function actualizarTarea(evento) {
   // vuelva a desaparecer el boton actualizar
   botonActualizar.style.display = 'none'
   // vuelve a quedar activo el input
-  nombre.removeAttribute('disabled')
+  role.removeAttribute('disabled')
   // actualizo el LS
   guardarEnLS()
   // actualizar la tabla
