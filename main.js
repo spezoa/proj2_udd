@@ -1,8 +1,8 @@
 let addButton = document.getElementById('addButton')
-addButton.addEventListener('click', (evento) => addRole(evento))
+addButton.addEventListener('click', (event) => addRole(event))
 
-let botonActualizar = document.getElementById('actualizar')
-botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
+let updateButton = document.getElementById('update')
+updateButton.addEventListener('click', (event) => actualizarTarea(event))
 
 let role = document.getElementById('addRole')
 let responsable = document.getElementById('responsable')
@@ -39,7 +39,7 @@ function limpiarInput() {
 
 function editarTarea(boton, nombreTarea) {
   addButton.style.display = 'none'
-  botonActualizar.style.display = 'block'
+  updateButton.style.display = 'block'
 
   let tareaEnEdicion = tareas.find((tarea) => tarea.nombre === nombreTarea)
 
@@ -92,8 +92,8 @@ function guardarEnLS() {
   window.localStorage.setItem('tareas', arrayConvertidoAString)
 }
 
-function actualizarTarea(evento) {
-  evento.preventDefault()
+function actualizarTarea(event) {
+  event.preventDefault()
   // leer los datos del input
   let nombreTarea = role.value
   let nuevoResponsable = responsable.value
@@ -118,7 +118,7 @@ function actualizarTarea(evento) {
   // vuelve a aparecer boton agregar
   addButton.style.display = 'block'
   // vuelva a desaparecer el boton actualizar
-  botonActualizar.style.display = 'none'
+  updateButton.style.display = 'none'
   // vuelve a quedar activo el input
   role.removeAttribute('disabled')
   // actualizo el LS
