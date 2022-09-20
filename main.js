@@ -1,10 +1,10 @@
-let addButton = document.getElementById('addButton')
-addButton.addEventListener('click', (event) => addRole(event))
+let botonAgregar = document.getElementById('agregar')
+botonAgregar.addEventListener('click', (evento) => agregarTarea(evento))
 
-let updateButton = document.getElementById('update')
-updateButton.addEventListener('click', (event) => actualizarTarea(event))
+let botonActualizar = document.getElementById('actualizar')
+botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
 
-let role = document.getElementById('addRole')
+let nombre = document.getElementById('nombre-tarea')
 let responsable = document.getElementById('responsable')
 let descripcion = document.getElementById('descripcion')
 
@@ -12,11 +12,11 @@ let contenedor = document.getElementById('tareas')
 
 let tareas = []
 
-function addRole(e) {
+function agregarTarea(e) {
   e.preventDefault()
 
   const tarea = {
-    nombre: role.value, //este elemento es único
+    nombre: nombre.value, //este elemento es único
     responsable: responsable.value,
     descripcion: descripcion.value
   }
@@ -32,21 +32,21 @@ function addRole(e) {
 }
 
 function limpiarInput() {
-  role.value = ''
+  nombre.value = ''
   responsable.value = ''
   descripcion.value = ''
 }
 
 function editarTarea(boton, nombreTarea) {
-  addButton.style.display = 'none'
-  updateButton.style.display = 'block'
+  botonAgregar.style.display = 'none'
+  botonActualizar.style.display = 'block'
 
   let tareaEnEdicion = tareas.find((tarea) => tarea.nombre === nombreTarea)
 
-  role.value = tareaEnEdicion.nombre
+  nombre.value = tareaEnEdicion.nombre
   responsable.value = tareaEnEdicion.responsable
   descripcion.value = tareaEnEdicion.descripcion
-  role.setAttribute('disabled', true)
+  nombre.setAttribute('disabled', true)
 }
 
 function eliminarTarea(boton, nombre) {
@@ -92,10 +92,10 @@ function guardarEnLS() {
   window.localStorage.setItem('tareas', arrayConvertidoAString)
 }
 
-function actualizarTarea(event) {
-  event.preventDefault()
+function actualizarTarea(evento) {
+  evento.preventDefault()
   // leer los datos del input
-  let nombreTarea = role.value
+  let nombreTarea = nombre.value
   let nuevoResponsable = responsable.value
   let nuevaDescripcion = descripcion.value
 
@@ -116,11 +116,11 @@ function actualizarTarea(event) {
   limpiarInput()
 
   // vuelve a aparecer boton agregar
-  addButton.style.display = 'block'
+  botonAgregar.style.display = 'block'
   // vuelva a desaparecer el boton actualizar
-  updateButton.style.display = 'none'
+  botonActualizar.style.display = 'none'
   // vuelve a quedar activo el input
-  role.removeAttribute('disabled')
+  nombre.removeAttribute('disabled')
   // actualizo el LS
   guardarEnLS()
   // actualizar la tabla
