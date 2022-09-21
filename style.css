@@ -26,14 +26,14 @@ input{
     margin-bottom: 5em;
 }
 
-#tareas{
+#assignedFunction{
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#tareas article{
+#assignedFunction article{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,7 +41,7 @@ input{
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#tareas article div:first-child{
+#assignedFunction article div:first-child{
     display: flex;
 }
 
@@ -49,6 +49,6 @@ p{
     margin-right: 15px;
 }
 
-#actualizar{
+#updateBtn{
     display: none;
 }
