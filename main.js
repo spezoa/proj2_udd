@@ -51,7 +51,7 @@ function eraseAssignment(boton, functionName) {
   saveAtLocalStorage()
 }
 
-function leerTareas() {
+function readAssignments() {
   let tareasEnLS = window.localStorage.getItem('assignedFunction')
 
   assignedFunction = JSON.parse(tareasEnLS) || []
@@ -110,4 +110,4 @@ function updateAssignment(evento) {
   showAssignments()
 }
 
-leerTareas()
+readAssignments()
