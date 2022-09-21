@@ -4,8 +4,8 @@ addButton.addEventListener('click', (evento) => agregarTarea(evento))
 let botonActualizar = document.getElementById('actualizar')
 botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
 
-let functionName = document.getElementById('nombre-tarea')
-let responsable = document.getElementById('responsable')
+let functionName = document.getElementById('functionName')
+let accountable = document.getElementById('accountable')
 let descripcion = document.getElementById('descripcion')
 
 let assignedFunctionContainer = document.getElementById('assignedFunction')
@@ -17,7 +17,7 @@ function agregarTarea(e) {
 
   const tarea = {
     nombre: functionName.value, //este elemento es único
-    responsable: responsable.value,
+    responsable: accountable.value,
     descripcion: descripcion.value
   }
 
@@ -33,7 +33,7 @@ function agregarTarea(e) {
 
 function limpiarInput() {
   functionName.value = ''
-  responsable.value = ''
+  accountable.value = ''
   descripcion.value = ''
 }
 
@@ -44,7 +44,7 @@ function editarTarea(button, nombreTarea) {
   let tareaEnEdicion = assignedFunction.find((tarea) => tarea.nombre === nombreTarea)
 
   functionName.value = tareaEnEdicion.nombre
-  responsable.value = tareaEnEdicion.responsable
+  accountable.value = tareaEnEdicion.responsable
   descripcion.value = tareaEnEdicion.descripcion
   functionName.setAttribute('disabled', true)
 }
@@ -96,7 +96,7 @@ function actualizarTarea(evento) {
   evento.preventDefault()
   // leer los datos del input
   let nombreTarea = functionName.value
-  let nuevoResponsable = responsable.value
+  let nuevoResponsable = accountable.value
   let nuevaDescripcion = descripcion.value
 
   // editar el obtejo dentro del array que tenga el identificar
@@ -128,5 +128,3 @@ function actualizarTarea(evento) {
 }
 
 leerTareas()
-
-// ctrl + alt + }x2

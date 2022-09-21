@@ -128,5 +128,3 @@ function actualizarTarea(evento) {
 }
 
 leerTareas()
-
-// ctrl + alt + }x2
