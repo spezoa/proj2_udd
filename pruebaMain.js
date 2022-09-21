@@ -1,18 +1,18 @@
 let addButton = document.getElementById('addBtn')
-addButton.addEventListener('click', (evento) => agregarTarea(evento))
+addButton.addEventListener('click', (event) => assignFunction(event))
 
-let botonActualizar = document.getElementById('actualizar')
-botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
+let updateButton = document.getElementById('updateBtn')
+updateButton.addEventListener('click', (event) => updateAssignment(event))
 
 let functionName = document.getElementById('functionName')
-let accountable = document.getElementById('accountable')
+let accountable = document.getElementById('accountableName')
 let assignDescription = document.getElementById('assignDescription')
 
 let assignedFunctionContainer = document.getElementById('assignedFunction')
 
 let assignedFunction = []
 
-function agregarTarea(e) {
+function assignFunction(e) {
   e.preventDefault()
 
   const tarea = {
@@ -39,7 +39,7 @@ function limpiarInput() {
 
 function editarTarea(button, nombreTarea) {
   addButton.style.display = 'none'
-  botonActualizar.style.display = 'block'
+  updateButton.style.display = 'block'
 
   let tareaEnEdicion = assignedFunction.find((tarea) => tarea.nombre === nombreTarea)
 
@@ -92,7 +92,7 @@ function guardarEnLS() {
   window.localStorage.setItem('assignedFunction', arrayConvertidoAString)
 }
 
-function actualizarTarea(evento) {
+function updateAssignment(evento) {
   evento.preventDefault()
   // leer los datos del input
   let nombreTarea = functionName.value
@@ -118,7 +118,7 @@ function actualizarTarea(evento) {
   // vuelve a aparecer boton agregar
   addButton.style.display = 'block'
   // vuelva a desaparecer el boton actualizar
-  botonActualizar.style.display = 'none'
+  updateButton.style.display = 'none'
   // vuelve a quedar activo el input
   functionName.removeAttribute('disabled')
   // actualizo el LS
