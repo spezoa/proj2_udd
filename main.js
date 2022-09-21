@@ -12,43 +12,43 @@ let assignedFunctionContainer = document.getElementById('assignedFunction')
 
 let assignedFunction = []
 
-function assignFunction(assignment) {
-  assignment.preventDefault()
+function assignFunction(assignmentFunc) {
+  assignmentFunc.preventDefault()
 
-  const tarea = {
+  const assignment = {
     name: functionName.value,
     accountable: accountable.value,
     description: assignDescription.value
   }
 
-  assignedFunction.push(tarea)
-  guardarEnLS()
-  mostrarTareas()
-  limpiarInput()
+  assignedFunction.push(assignment)
+  saveAtLocalStorage()
+  showAssignments()
+  cleanInput()
 }
 
-function limpiarInput() {
+function cleanInput() {
   functionName.value = ''
   accountable.value = ''
   assignDescription.value = ''
 }
 
-function editarTarea(button, nombreTarea) {
+function editFunction(button, nombreTarea) {
   addButton.style.display = 'none'
   updateButton.style.display = 'block'
 
-  let tareaEnEdicion = assignedFunction.find((tarea) => tarea.name === nombreTarea)
+  let assignmentInEdition = assignedFunction.find((assignment) => assignment.name === nombreTarea)
 
-  functionName.value = tareaEnEdicion.name
-  accountable.value = tareaEnEdicion.accountable
-  assignDescription.value = tareaEnEdicion.description
+  functionName.value = assignmentInEdition.name
+  accountable.value = assignmentInEdition.accountable
+  assignDescription.value = assignmentInEdition.description
   functionName.setAttribute('disabled', true)
 }
 
-function eliminarTarea(boton, functionName) {
+function eraseAssignment(boton, functionName) {
   boton.parentElement.parentElement.remove()
-  assignedFunction = assignedFunction.filter((tarea) => tarea.name !== functionName)
-  guardarEnLS()
+  assignedFunction = assignedFunction.filter((assignment) => assignment.name !== functionName)
+  saveAtLocalStorage()
 }
 
 function leerTareas() {
@@ -56,29 +56,29 @@ function leerTareas() {
 
   assignedFunction = JSON.parse(tareasEnLS) || []
 
-  mostrarTareas()
+  showAssignments()
 }
 
-function mostrarTareas() {
+function showAssignments() {
   assignedFunctionContainer.innerHTML = ''
-  assignedFunction.forEach((tarea) => {
+  assignedFunction.forEach((assignment) => {
     assignedFunctionContainer.innerHTML += `
             <article>
                 <div>
-                    <p>${tarea.name}</p>
-                    <p>${tarea.accountable}</p>
-                    <p>${tarea.description}</p>
+                    <p>${assignment.name}</p>
+                    <p>${assignment.accountable}</p>
+                    <p>${assignment.description}</p>
                 </div>
                 <div>
-                    <button onclick="editarTarea(this, '${tarea.name}' )">Editar</button>
-                    <button onclick="eliminarTarea(this, '${tarea.name}' )">Borrar</button>
+                    <button onclick="editFunction(this, '${assignment.name}' )">Editar</button>
+                    <button onclick="eraseAssignment(this, '${assignment.name}' )">Borrar</button>
                 </div>
             </article>
       `
   })
 }
 
-function guardarEnLS() {
+function saveAtLocalStorage() {
   let arrayConvertidoAString = JSON.stringify(assignedFunction)
   window.localStorage.setItem('assignedFunction', arrayConvertidoAString)
 }
@@ -89,25 +89,25 @@ function updateAssignment(evento) {
   let nuevoResponsable = accountable.value
   let nuevaDescripcion = assignDescription.value
 
-  assignedFunction = assignedFunction.map((tarea) => {
-    if (tarea.name === nombreTarea) {
+  assignedFunction = assignedFunction.map((assignment) => {
+    if (assignment.name === nombreTarea) {
       return {
         name: nombreTarea,
         accountable: nuevoResponsable,
         description: nuevaDescripcion
       }
     } else {
-      return tarea
+      return assignment
     }
   })
 
-  limpiarInput()
+  cleanInput()
 
   addButton.style.display = 'block'
   updateButton.style.display = 'none'
   functionName.removeAttribute('disabled')
-  guardarEnLS()
-  mostrarTareas()
+  saveAtLocalStorage()
+  showAssignments()
 }
 
 leerTareas()
