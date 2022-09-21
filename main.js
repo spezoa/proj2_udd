@@ -4,11 +4,11 @@ addButton.addEventListener('click', (evento) => agregarTarea(evento))
 let botonActualizar = document.getElementById('actualizar')
 botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
 
-let nombre = document.getElementById('nombre-tarea')
+let functionName = document.getElementById('nombre-tarea')
 let responsable = document.getElementById('responsable')
 let descripcion = document.getElementById('descripcion')
 
-let contenedor = document.getElementById('assignedFunction')
+let assignedFunctionContainer = document.getElementById('assignedFunction')
 
 let assignedFunction = []
 
@@ -16,7 +16,7 @@ function agregarTarea(e) {
   e.preventDefault()
 
   const tarea = {
-    nombre: nombre.value, //este elemento es único
+    nombre: functionName.value, //este elemento es único
     responsable: responsable.value,
     descripcion: descripcion.value
   }
@@ -32,7 +32,7 @@ function agregarTarea(e) {
 }
 
 function limpiarInput() {
-  nombre.value = ''
+  functionName.value = ''
   responsable.value = ''
   descripcion.value = ''
 }
@@ -43,15 +43,15 @@ function editarTarea(button, nombreTarea) {
 
   let tareaEnEdicion = assignedFunction.find((tarea) => tarea.nombre === nombreTarea)
 
-  nombre.value = tareaEnEdicion.nombre
+  functionName.value = tareaEnEdicion.nombre
   responsable.value = tareaEnEdicion.responsable
   descripcion.value = tareaEnEdicion.descripcion
-  nombre.setAttribute('enabled', true)
+  functionName.setAttribute('disabled', true)
 }
 
-function eliminarTarea(boton, nombre) {
+function eliminarTarea(boton, functionName) {
   boton.parentElement.parentElement.remove()
-  assignedFunction = assignedFunction.filter((tarea) => tarea.nombre !== nombre)
+  assignedFunction = assignedFunction.filter((tarea) => tarea.nombre !== functionName)
   guardarEnLS()
 }
 
@@ -69,9 +69,9 @@ function leerTareas() {
 }
 
 function mostrarTareas() {
-  contenedor.innerHTML = ''
+  assignedFunctionContainer.innerHTML = ''
   assignedFunction.forEach((tarea) => {
-    contenedor.innerHTML += `
+    assignedFunctionContainer.innerHTML += `
             <article>
                 <div>
                     <p>${tarea.nombre}</p>
@@ -95,7 +95,7 @@ function guardarEnLS() {
 function actualizarTarea(evento) {
   evento.preventDefault()
   // leer los datos del input
-  let nombreTarea = nombre.value
+  let nombreTarea = functionName.value
   let nuevoResponsable = responsable.value
   let nuevaDescripcion = descripcion.value
 
@@ -120,7 +120,7 @@ function actualizarTarea(evento) {
   // vuelva a desaparecer el boton actualizar
   botonActualizar.style.display = 'none'
   // vuelve a quedar activo el input
-  nombre.removeAttribute('disabled')
+  functionName.removeAttribute('disabled')
   // actualizo el LS
   guardarEnLS()
   // actualizar la tabla
