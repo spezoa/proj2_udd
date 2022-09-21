@@ -6,7 +6,7 @@ botonActualizar.addEventListener('click', (evento) => actualizarTarea(evento))
 
 let functionName = document.getElementById('functionName')
 let accountable = document.getElementById('accountable')
-let descripcion = document.getElementById('descripcion')
+let assignDescription = document.getElementById('assignDescription')
 
 let assignedFunctionContainer = document.getElementById('assignedFunction')
 
@@ -18,7 +18,7 @@ function agregarTarea(e) {
   const tarea = {
     nombre: functionName.value, //este elemento es único
     responsable: accountable.value,
-    descripcion: descripcion.value
+    descripcion: assignDescription.value
   }
 
   // if (tarea que estoy creando ya existe en el array o algun input está vacío) {
@@ -34,7 +34,7 @@ function agregarTarea(e) {
 function limpiarInput() {
   functionName.value = ''
   accountable.value = ''
-  descripcion.value = ''
+  assignDescription.value = ''
 }
 
 function editarTarea(button, nombreTarea) {
@@ -45,7 +45,7 @@ function editarTarea(button, nombreTarea) {
 
   functionName.value = tareaEnEdicion.nombre
   accountable.value = tareaEnEdicion.responsable
-  descripcion.value = tareaEnEdicion.descripcion
+  assignDescription.value = tareaEnEdicion.descripcion
   functionName.setAttribute('disabled', true)
 }
 
@@ -97,7 +97,7 @@ function actualizarTarea(evento) {
   // leer los datos del input
   let nombreTarea = functionName.value
   let nuevoResponsable = accountable.value
-  let nuevaDescripcion = descripcion.value
+  let nuevaDescripcion = assignDescription.value
 
   // editar el obtejo dentro del array que tenga el identificar
   assignedFunction = assignedFunction.map((tarea) => {
