@@ -63,14 +63,14 @@ function showAssignments() {
   assignedFunctionContainer.innerHTML = ''
   assignedFunction.forEach((assignment) => {
     assignedFunctionContainer.innerHTML += `
-            <article>
+            <article class="d-flex justify-content-between mt-5">
                 <div>
-                    <p>${assignment.name}</p>
-                    <p>${assignment.accountable}</p>
-                    <p>${assignment.description}</p>
+                    <p class="mx-1">${assignment.name}</p>
+                    <p class="mx-1">${assignment.accountable}</p>
+                    <p class="mx-1">${assignment.description}</p>
                 </div>
                 <div>
-                    <button class="btn btn-info text-dark" onclick="editFunction(this, '${assignment.name}' )">Editar</button>
+                    <button class="mx-3 btn btn-info text-dark" onclick="editFunction(this, '${assignment.name}' )">Editar</button>
                     <button class="btn btn-danger text-dark" onclick="eraseAssignment(this, '${assignment.name}' )">Borrar</button>
                 </div>
             </article>

@@ -1,33 +1,33 @@
-form{
+form {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-input{
-    margin-bottom: 2em ;
+input {
+    margin-bottom: 2em;
 }
 
-.formulario{
+.formulario {
     display: flex;
     justify-content: center;
     margin-bottom: 5em;
 }
 
-#assignedFunction{
+#assignedFunction {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#assignedFunction article{
+#assignedFunction article {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -35,14 +35,47 @@ input{
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#assignedFunction article div:first-child{
+#assignedFunction article div:first-child {
     display: flex;
 }
 
-p{
+p {
     margin-right: 15px;
 }
 
-#updateBtn{
+#updateBtn {
     display: none;
+}
+
+#form {
+    width: 400px;
+}
+
+#formAssign {
+    width: 350px;
+}
+
+#formAccountable {
+    width: 350px;
+}
+
+#formDescription {
+    width: 350px;
+}
+
+#functionName {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#accountableName {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#assignDescription {
+    margin-top: 10px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    text-align: justify;
 }

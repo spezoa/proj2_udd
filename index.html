@@ -19,22 +19,21 @@
             <h2 class="container-fluid ">Designación funciones turno guardia nocturna</h2>
         </div>
         <div>
-            <h2 class="container-fluid ">Probando resposinve</h2>
+            <h2 class="container-fluid ">Probando responsive</h2>
         </div>
     </header>
     <main>
         <h2 class="">Lista de tareas</h2>
-
-        <section class="formulario">
-            <form class="">
-                <label class="" for="nombre-tarea">Nombre</label>
-                <input class="text-secondary fs-4 fw-semibold" type="text" name="nombre" id="functionName">
-                <label class="" for="responsable">Responsable</label>
-                <input class="text-secondary fs-4 fw-semibold" type="text" name="responsable" id="accountableName">
-                <label class="" for="descripcion">Descripción</label>
-                <input class="text-secondary fs-4 fw-semibold" type="text" name="descripcion" id="assignDescription">
-                <button class="btn btn-success text-dark fs-4 fw-bold" id="addBtn">Agregar</button>
-                <button class="btn btn-primary text-dark fs-4 fw-bold" id="updateBtn">Actualizar</button>
+        <section class="d-flex bg-light">
+            <form id="form" class="d-flex align-items-center bg-danger">
+                <label id="formAccountable" class="fs-3 bg-black text-center" for="accountableName">Voluntario</label>
+                <input class="text-secondary fw-normal" type="text" name="accountable" id="accountableName">
+                <label id="formAssign" class="fs-3 bg-black text-center" for="functionName">Asignación</label>
+                <input class="text-secondary fw-normal" type="text" name="volunteerName" id="functionName">
+                <label id="formDescription" class="fs-3 bg-black text-center" for="assignDescription">Descripción Asignación</label>
+                <textarea class="text-secondary fw-normal" type="text" name="description" id="assignDescription" cols="28" rows="3"></textarea>
+                <button class="btn btn-success text-dark fs-4 fw-bold my-3" id="addBtn">Agregar</button>
+                <button class="btn btn-primary text-dark fs-4 fw-bold my-3" id="updateBtn">Actualizar</button>
             </form>
         </section>
         <section id="assignedFunction">
