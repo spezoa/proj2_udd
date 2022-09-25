@@ -64,15 +64,15 @@ function showAssignments() {
   assignedFunction.forEach((assignment) => {
     assignedFunctionContainer.innerHTML += `
     <article class="my-3">
-      <div>
-        <p class="formInSection">${assignment.accountable}</p>
-        <p class="formInSection">${assignment.name}</p>
-        <p class="formInSection">${assignment.description}</p>
+      <div class="">
+        <span class="formInSection">- ${assignment.accountable}</span>
+        <span class="formInSection">- ${assignment.name}</span>
+        <span class="formInSection w-100">- ${assignment.description}</span>
       </div>
-      <div>
-        <button class="mx-3 btn btn-info text-dark"
+      <div class="px-4 py-2">
+        <button class="btn btn-info text-dark"
             onclick="editFunction(this, '${assignment.name}' )">Editar</button>
-        <button class="btn btn-danger text-dark"
+        <button class="mx-3 btn btn-danger text-dark"
             onclick="eraseAssignment(this, '${assignment.name}' )">Borrar</button>
       </div>
     </article>
