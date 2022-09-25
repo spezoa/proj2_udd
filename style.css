@@ -14,11 +14,11 @@ input {
     margin-bottom: 2em;
 }
 
-.formulario {
+/* .formulario {
     display: flex;
     justify-content: center;
     margin-bottom: 5em;
-}
+} */
 
 #assignedFunction {
     width: 80%;
@@ -35,32 +35,30 @@ input {
     align-items: center;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #assignedFunction article div:first-child{
     display: flex;
     justify-content: start;
-    align-items: center;
     width: 85%;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #assignedFunction article div p{
     display: flex;
     justify-content: start;
-    width: 100px;
+    width: 250px;
+    padding: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    word-break: break-all;
 }
 
 #infoHead {
     display: flex;
     justify-content: start;
-    padding: 10px;
     width: 80%;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
 }
 
@@ -76,9 +74,13 @@ input {
 #infoHead div {
     display: flex;
     justify-content: start;
-    width: 200px;
-    border-radius: 20px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
+    width: 250px;
+    margin: 0px;
+    padding: 0px;
+    border-right: 5px;
+    border-color: black;
+    /* border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50); */
 }
 
 /* #assignedFunction .formInSection {
@@ -86,9 +88,9 @@ input {
     justify-content:space-between;
 } */
 
-p {
+/* p {
     margin-right: 15px;
-}
+} */
 
 #updateBtn {
     display: none;

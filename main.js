@@ -63,11 +63,11 @@ function showAssignments() {
   assignedFunctionContainer.innerHTML = ''
   assignedFunction.forEach((assignment) => {
     assignedFunctionContainer.innerHTML += `
-    <article class="mt-2 mb-5">
+    <article class="my-3">
       <div>
-        <p class="formInSection mx-3 border-2">${assignment.accountable}</p>
-        <p class="formInSection mx-3 border-2">${assignment.name}</p>
-        <p class="formInSection mx-3 border-2">${assignment.description}</p>
+        <p class="formInSection">${assignment.accountable}</p>
+        <p class="formInSection">${assignment.name}</p>
+        <p class="formInSection">${assignment.description}</p>
       </div>
       <div>
         <button class="mx-3 btn btn-info text-dark"
