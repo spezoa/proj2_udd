@@ -39,6 +39,18 @@ input {
     display: flex;
 }
 
+section div div{
+    display: flex;
+    justify-content: start;
+    width: 300px;
+    
+}
+
+#assignedFunction .formInSection {
+    display: flex;
+    justify-content:space-between;
+}
+
 p {
     margin-right: 15px;
 }

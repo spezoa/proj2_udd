@@ -12,7 +12,7 @@
     <title>Crud Spezoa</title>
 </head>
 
-<body class="bg-dark text-warning">
+<body class="bg-success text-warning">
     <!-- Header crud app -->
     <header class="d-flex container-fluid  p-3 justify-content-between">
         <div>
@@ -30,14 +30,45 @@
                 <input class="text-secondary fw-normal" type="text" name="accountable" id="accountableName">
                 <label id="formAssign" class="fs-3 bg-black text-center" for="functionName">Asignación</label>
                 <input class="text-secondary fw-normal" type="text" name="volunteerName" id="functionName">
-                <label id="formDescription" class="fs-3 bg-black text-center" for="assignDescription">Descripción Asignación</label>
-                <textarea class="text-secondary fw-normal" type="text" name="description" id="assignDescription" cols="28" rows="3"></textarea>
+                <label id="formDescription" class="fs-3 bg-black text-center" for="assignDescription">Descripción
+                    Asignación</label>
+                <textarea class="text-secondary fw-normal" type="text" name="description" id="assignDescription"
+                    cols="28" rows="3"></textarea>
                 <button class="btn btn-success text-dark fs-4 fw-bold my-3" id="addBtn">Agregar</button>
                 <button class="btn btn-primary text-dark fs-4 fw-bold my-3" id="updateBtn">Actualizar</button>
             </form>
         </section>
+        <section class="bg-black d-flex w-75 mt-2 mb-5">
+            <div id="infoHead" class="d-flex w-100">
+                <div class="formInSection mx-3 border-2">Voluntario responsable</div>
+                <div class="formInSection mx-3 border-2">Asignación</div>
+                <div class="formInSection mx-3 border-2">Descripción asignación</div>
+            </div>
+        </section>
+        <!-- <article class="d-flex justify-content-between mt-2 mb-5">
+                <div>
+                    <p class="formInSection mx-3 border-2">Voluntario responsable</p>
+                    <p class="formInSection mx-3 border-2">Asignación</p>
+                    <p class="formInSection mx-3 border-2">Descripción asignación</p>
+                </div>
+            </article> -->
+        <!-- <article class="d-flex justify-content-between mt-2 mb-5">
+                <div>
+                    <p class="formInSection mx-3 border-2">${assignment.accountable}</p>
+                    <p class="formInSection mx-3 border-2">${assignment.name}</p>
+                    <p class="formInSection mx-3 border-2">${assignment.description}</p>
+                </div>
+                <div>
+                    <button class="mx-3 btn btn-info text-dark"
+                        onclick="editFunction(this, '${assignment.name}' )">Editar</button>
+                    <button class="btn btn-danger text-dark"
+                        onclick="eraseAssignment(this, '${assignment.name}' )">Borrar</button>
+                </div>
+            </article> -->
         <section id="assignedFunction">
         </section>
+
+
 
     </main>
 
