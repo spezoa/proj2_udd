@@ -14,27 +14,27 @@
 
 <body class="bg-dark text-warning">
     <!-- Header crud app -->
-    <header class="d-flex container-fluid bg-black p-4 justify-content-between mb-5">
-        <div>
+    <header class="d-flex w-100 container-fluid bg-black p-4 justify-content-between mb-5">
+        <div class="w-75">
             <h2 class="container-fluid fw-bolder fs-2 p-1 mx-2">Designación funciones turno guardia nocturna</h2>
         </div>
-        <div>
+        <div class="">
             <h2 class="container-fluid fw-bolder fs-1 p-1 mx-4">SGB</h2>
         </div>
     </header>
-    <main>
-        <h2 class="bg-black fw-bolder fs-1 w-25 text-center mt-0 mb-3">Lista de tareas</h2>
-        <section class="d-flex w-25 mb-5">
-            <form id="form" class="d-flex align-items-center bg-black">
-                <label id="formAccountable" class="fs-3 fw-bold bg-black text-center" for="accountableName">Voluntario
+    <main class="">
+        <h2 class="bg-black fw-bolder fs-1 text-center w-50">Lista de tareas</h2>
+        <section class="d-flex w-50 mb-5">
+            <form id="form" class="d-flex w-100 align-items-center bg-black">
+                <label id="formAccountable" class="w-100 mt-3 fs-3 fw-bold bg-black text-center" for="accountableName">Voluntario
                     OBAC</label>
-                <input class="text-secondary fw-semibold" type="text" name="accountable" id="accountableName">
-                <label id="formAssign" class="fs-3 fw-bold bg-black text-center" for="functionName">Asignación</label>
-                <input class="text-secondary fw-semibold" type="text" name="volunteerName" id="functionName">
-                <label id="formDescription" class="fs-3 fw-bold bg-black text-center"
+                <input class="w-75 text-secondary fw-semibold" type="text" name="accountable" id="accountableName">
+                <label id="formAssign" class="w-100 fs-3 fw-bold bg-black text-center" for="functionName">Asignación</label>
+                <input class="w-75 text-secondary fw-semibold" type="text" name="volunteerName" id="functionName">
+                <label id="formDescription" class="w-100 fs-3 fw-bold bg-black text-center"
                     for="assignDescription">Descripción
                     Asignación</label>
-                <textarea class="text-secondary fw-semibold" type="text" name="description" id="assignDescription"
+                <textarea class="w-75 text-secondary fw-semibold" type="text" name="description" id="assignDescription"
                     cols="28" rows="3"></textarea>
                 <button class="btn btn-success text-dark fs-4 fw-bold my-3" id="addBtn">Agregar</button>
                 <button class="btn btn-primary text-dark fs-4 fw-bold my-3" id="updateBtn">Actualizar</button>
@@ -44,7 +44,7 @@
             <article class="my-1 bg-dark fw-bolder fs-5">
                 <div class="formInSection w-25 text-uppercase"><span>Voluntario OBAC</span></div>
                 <div class="formInSection w-25 text-uppercase"><span>Asignación</span></div>
-                <div class="formInSection w-75 text-uppercase"><span>Descripción asignación</span></div>
+                <div class="formInSection w-100 text-uppercase"><span>Descripción asignación</span></div>
             </article>
         </section>
         <section id="assignedFunction" class="bg-black">
