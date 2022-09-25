@@ -63,13 +63,13 @@ function showAssignments() {
   assignedFunctionContainer.innerHTML = ''
   assignedFunction.forEach((assignment) => {
     assignedFunctionContainer.innerHTML += `
-    <article class="my-3">
+    <article class="my-2 bg-dark fw-semibold fs-6">
       <div class="">
-        <span class="formInSection">- ${assignment.accountable}</span>
-        <span class="formInSection">- ${assignment.name}</span>
-        <span class="formInSection w-100">- ${assignment.description}</span>
+        <span class="formInSection w-25">- ${assignment.accountable.toUpperCase()}</span>
+        <span class="formInSection w-25">- ${assignment.name.toUpperCase()}</span>
+        <span class="formInSection w-50">- ${assignment.description.toUpperCase()}</span>
       </div>
-      <div class="px-4 py-2">
+      <div class="px-1 py-3">
         <button class="btn btn-info text-dark"
             onclick="editFunction(this, '${assignment.name}' )">Editar</button>
         <button class="mx-3 btn btn-danger text-dark"

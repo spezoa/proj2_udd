@@ -2,6 +2,8 @@ form {
     display: flex;
     flex-direction: column;
     width: 50%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
 }
 
 main {
@@ -14,19 +16,14 @@ input {
     margin-bottom: 2em;
 }
 
-/* .formulario {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5em;
-} */
-
 #assignedFunction {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0px;
+    border-radius: 0px 0px 10px 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
 }
 
@@ -34,68 +31,61 @@ input {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
+    /* border: 1px;
+    border-color: #ffc107;
+    border-style: solid; */
 }
 
-#assignedFunction article div:first-child{
+#assignedFunction article div:first-child {
     display: flex;
     justify-content: start;
-    padding-left: 5px;
+    padding: 10px;
     align-items: start;
     width: 80%;
-    border-radius: 5px;
 }
 
-#assignedFunction article div span{
+#assignedFunction article div span {
     display: flex;
     justify-content: start;
     width: 250px;
     height: 100%;
-    padding: 10px;
+    margin-left: 15px;
     border-radius: 5px;
     word-break: break-all;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
 }
 
 #infoHead {
     display: flex;
     justify-content: start;
     width: 80%;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
 }
 
-/* #infoHead article {
+#infoHead article {
     display: flex;
     justify-content: start;
-    padding: 6px;
+    padding: 5px;
     width: 100%;
-    border-radius: 0px;
+    border-radius: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
-} */
-
-#infoHead div {
-    display: flex;
-    justify-content: start;
-    width: 250px;
-    margin: 0px;
-    padding: 0px;
-    border-right: 5px;
-    border-color: black;
-    /* border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50); */
 }
 
-/* #assignedFunction .formInSection {
+#infoHead article div {
     display: flex;
-    justify-content:space-between;
-} */
+    justify-content: start;
+    margin-right: 10px;
+    padding: 15px 0px;
+}
 
-/* p {
-    margin-right: 15px;
-} */
+#infoHead article div span {
+    margin-left: 15px;
+    /* border-radius: 5px;
+    color: black;
+    background-color: yellow; */
+}
 
 #updateBtn {
     display: none;
@@ -132,4 +122,20 @@ input {
     overflow-y: scroll;
     word-wrap: break-word;
     text-align: justify;
+}
+
+main h2 {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 50);
+}
+
+footer {
+    background-color: black;
+}
+
+footer img {
+    margin: 10px 50px;
+    width: 100px;
 }
