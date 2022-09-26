@@ -65,9 +65,9 @@ function showAssignments() {
     assignedFunctionContainer.innerHTML += `
     <article class="my-2 bg-dark fw-semibold fs-6">
       <div class="w-100">
-        <span class="formInSection w-25">- ${assignment.accountable.toUpperCase()}</span>
-        <span class="formInSection w-25">- ${assignment.name.toUpperCase()}</span>
-        <span class="formInSection w-75">- ${assignment.description.toUpperCase()}</span>
+        <span class="formInSection w-25">${assignment.accountable.toUpperCase()}</span>
+        <span class="formInSection w-25">${assignment.name.toUpperCase()}</span>
+        <span class="formInSection w-75">${assignment.description.toUpperCase()}</span>
       </div>
       <div class="px-1 py-3">
         <button class="btn btn-info text-dark"
