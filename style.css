@@ -190,7 +190,7 @@ footer img {
 
     #assignedFunction article div span {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         min-width: 80px;
         height: 100%;
         font-size: small;
